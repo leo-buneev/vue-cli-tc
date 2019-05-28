@@ -18,3 +18,12 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# cordova
+src-cordova/package.json
+src-cordova/package-lock.json
+src-cordova/platforms
+src-cordova/plugins
+src-cordova/ul_web_hooks
+src-cordova/www/*
+!src-cordova/www/.gitkeep

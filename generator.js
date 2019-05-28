@@ -117,6 +117,10 @@ module.exports = (api, options, rootOptions) => {
         path.join(__dirname, './templateOnCreateComplete/src-cordova/build.json'), 
         path.join(cordovaSrcPath, 'build.json')
       )
+      fs.copyFileSync(
+        path.join(__dirname, './templateOnCreateComplete/src-cordova/www/.gitkeep'), 
+        path.join(cordovaSrcPath, 'www/.gitkeep')
+      )
     }
 
     injectImport(path.join(cwd, api.entryFile), `import '@/mixins/globalMixins/globalMixins'`)
