@@ -19,7 +19,11 @@ yarn global add @vue/cli
 3. Create a project with: 
 
 ```
+# create in directory "my-project-name"
 vue create --preset leo-buneev/vue-cli-tc my-project-name
+
+# create in current directory (project name will be deduced from directory name)
+vue create --preset leo-buneev/vue-cli-tc .
 ```
 
 And you're done! :tada: :fire:
