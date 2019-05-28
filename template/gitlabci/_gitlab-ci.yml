@@ -1,0 +1,20 @@
+stages:
+  - test
+  - deploy
+
+lint:
+  stage: test
+  script:
+    - call yarn install
+    - call yarn lint
+  
+deploy:
+  stage: deploy
+  script:
+    - call yarn install
+    - call yarn build
+    - call yarn deploy
+  artifacts: 
+    - dist
+  only:
+    - master

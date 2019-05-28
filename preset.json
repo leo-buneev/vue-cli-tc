@@ -5,8 +5,7 @@
     "@vue/cli-plugin-eslint": {
       "config": "prettier",
       "lintOn": []
-    },
-    "@vue/cli-plugin-unit-jest": {}
+    }
   },
   "router": true,
   "routerHistoryMode": false,

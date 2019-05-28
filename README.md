@@ -31,13 +31,37 @@ And you're done! :tada: :fire:
 - [Vue.js](https://vuejs.org/v2/guide/)
 - Babel set up to support most major browsers
 - ESlint + prettier with tyrecheck config
-- Unit testing with [jest](https://jestjs.io/docs/en/getting-started) and [vue-test-utils](https://vue-test-utils.vuejs.org/guides/getting-started.html)
 - [vuex](https://vuex.vuejs.org/guide/), [vue-router](https://router.vuejs.org/guide/)
 - [Stylus](http://stylus-lang.com/)
 - VSCode workspace settings and recommended extensions
 
+
 ### Opt-in features
 
 - [Quasar](https://quasar-framework.org/guide/)
-- [Pug](https://pugjs.org/language/attributes.html)
+- Unit testing with [jest](https://jestjs.io/docs/en/getting-started) and [vue-test-utils](https://vue-test-utils.vuejs.org/guides/getting-started.html)
 - E2E testing with [Cypress](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Write-a-simple-test)
+- [GitLab CI](https://docs.gitlab.com/ee/ci/) configuration
+- [Cordova](https://cordova.apache.org/docs/en/latest/) project scaffolding and build commands
+- [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/) deployment
+
+#### Azure configuration
+
+To be able to deploy to azure, after project is created you must provide your credentials in `/scripts/deploy.js`.
+To test deployment, run `yarn deploy` in your command line.
+
+#### Cordova configuration
+
+1. You will need to register your app in Apple and Google stores to be able to build production version of the app.
+2. During development, it's recommended to have real phone connected to your computer. Emulators don't work properly.
+3. Please check `/src-cordova/cordova.xml` and fix fields `id`, `name`, `description` and `author`.
+4. Often additional cordova plugins don't work properly - see `Incenter 2.0` `config.xml` for list of supported plugins.
+
+Command line Commands:
+
+```
+yarn cordova-build-android
+yarn cordova-build-ios
+yarn cordova-dev-android
+yarn cordova-dev-ios
+```

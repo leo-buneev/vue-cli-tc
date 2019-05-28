@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch in Chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}/src",
+      "breakOnLoad": true,
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      },
+      "showAsyncStacks": true,
+      "smartStep": true,
+      "skipFiles": ["node_modules", "~"]
+    },
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "url": "http://localhost:8080/*",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/src",
+      "breakOnLoad": true,
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      },
+      "targetTypes": ["page", "webview"],
+      "showAsyncStacks": true,
+      "smartStep": true,
+      "skipFiles": ["node_modules", "~"]
+    }
+  ]
+}
