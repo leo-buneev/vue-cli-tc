@@ -1,3 +1,4 @@
+const { spawnSync } = require('child_process')
 const fs = require('fs-extra')
 process.env.NODE_ENV = 'development'
 
