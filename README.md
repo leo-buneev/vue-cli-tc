@@ -51,8 +51,18 @@ And you're done! :tada: :fire:
 
 #### Azure configuration
 
-To be able to deploy to azure, after project is created you must provide your credentials in `/scripts/deploy.js`.
-To test deployment, run `yarn deploy` in your command line.
+There is nearly free hosting option on Azure. If you want to use it:
+
+1. Create Azure account (if you don't have one already)
+2. Create Storage account
+    - Standard
+    - Pick closest Region (but it doesn't matter too much)
+    - Hot
+3. Copy Storage Account name and key into `/scripts/deploy.js`
+4. Turn on "static website" in Azure Storage Account => settings => Static Website
+    - Put "index.html" as default page
+    - Copy "Primary endpoint" sugested by azure. This will be url of your website.
+6. `yarn build` and `yarn deploy`
 
 #### Cordova configuration
 
