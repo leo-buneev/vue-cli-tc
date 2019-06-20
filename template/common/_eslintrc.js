@@ -5,6 +5,7 @@ module.exports = {
   },
   globals: {
     _: true,
+    createGuid: true,
   },
   extends: ['plugin:tyrecheck/recommended'],
   rules: {

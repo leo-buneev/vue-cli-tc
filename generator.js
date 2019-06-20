@@ -62,6 +62,7 @@ module.exports = (api, options, rootOptions) => {
   }
   let dependencies = {
     "lodash": "^4.17.11",
+    'uuid': '^3.3.2',
   }
   const vue = {
     configureWebpack: {
@@ -125,7 +126,7 @@ module.exports = (api, options, rootOptions) => {
 
     injectImport(path.join(cwd, api.entryFile), `import '@/mixins/globalMixins/globalMixins'`)
     injectImport(path.join(cwd, 'vue.config.js'), `const webpack = require('webpack')`)
-    injectWebpackPlugin(path.join(cwd, 'vue.config.js'), `new webpack.ProvidePlugin({ _: 'lodash' })`)
+    injectWebpackPlugin(path.join(cwd, 'vue.config.js'), `new webpack.ProvidePlugin({ _: 'lodash', createGuid: 'uuid/v4' })`)
     fixUnnecessaryRegexEscapeCharacters(path.join(cwd, 'vue.config.js'))
 
     spawn(`yarn lint-fix`, cwd)
